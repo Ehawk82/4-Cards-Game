@@ -71,19 +71,25 @@
         bySelAll: (x) => { return document.querySelectorAll(x) },
         byTag: (x) => { return document.getElementsByTagName(x) },
         preLoader: () => {
-            console.log("preloading");
+            //console.log("preloading");
         },
         init: () => {
 
             myUI.myLoad();
+
         },
         myLoad: () => {
             var startBtn = myUI.createEle("button");
 
             startBtn.innerHTML = "START";
+            startBtn.className = "startBtn";
             startBtn.onclick = myUI.startGame(startBtn);
 
             dvContainer.appendChild(startBtn);
+
+            setTimeout(() => {
+                startBtn.className = "startBtn_full";
+            }, 600);
         },
         startGame: (startBtn) => {
             return () => {
@@ -94,16 +100,50 @@
             }
         },
         gameInterfaceLoad: () => {
-            var cardHolder = myUI.createEle("div");
+            var meterHolder = myUI.createEle("div"),
+                food = myUI.createEle("div"),
+                people = myUI.createEle("div"),
+                military = myUI.createEle("div"),
+                money = myUI.createEle("div"),
+                cardHolder = myUI.createEle("div"),
+                outputHolder = myUI.createEle("div");
+
+            food.innerHTML = "<h3>🥣</h3>";
+            food.className = "food";
+
+            people.innerHTML = "<h3>👫</h3>";
+            people.className = "people";
+
+            military.innerHTML = "<h3>⚔</h3>";
+            military.className = "military";
+
+            money.innerHTML = "<h3>💲</h3>";
+            money.className = "money";
+
+            meterHolder.className = "meterHolder";
+            meterHolder.appendChild(food);
+            meterHolder.appendChild(people);
+            meterHolder.appendChild(military);
+            meterHolder.appendChild(money);
+
 
             cardHolder.innerHTML = "&nbsp;";
             cardHolder.className = "cardHolder";
 
+            outputHolder.innerHTML = "&nbsp;";
+            outputHolder.className = "outputHolder";
+
+            dvContainer.appendChild(meterHolder);
+            dvContainer.appendChild(cardHolder);
+            dvContainer.appendChild(outputHolder);
+
             setTimeout(() => {
+                meterHolder.className = "meterHolder_full";
+
                 cardHolder.className = "cardHolder_full";
-                dvContainer.appendChild(cardHolder);
-            }, 500);
-            
+
+                outputHolder.className = "outputHolder_full";
+            }, 600);
         }
     };
 

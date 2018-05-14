@@ -1,4 +1,5 @@
-﻿html {
+﻿/* DOM */
+html {
 
 }
 html, body {
@@ -6,26 +7,98 @@ html, body {
     margin: 0;
     padding: 0;
 }
-.cardHolder {
-    transition: 500ms all;
+/* class */
+.startBtn {
+    transition: 300ms all;
     position: absolute;
-    box-shadow: 0 0 1px black;
-    height: 500px;
-    width: 500px;
-    position: absolute;
+    box-shadow: 0 0 1px #000;
+    background-color:lightgrey;
+    height: 10%;
+    width: 10%;
     top: 10%;
-    left: -510px;
+    left: -15%;
+}
+.startBtn_full {
+    transition: 300ms all;
+    position: absolute;
+    box-shadow: 0 0 1px #000;
+    background-color: lightgrey;
+    height: 10%;
+    width: 10%;
+    top: 10%;
+    left: 5%;
+}
+.cardHolder {
+    transition: 300ms all;
+    position: absolute;
+    box-shadow: 0 0 2px #000;
+    height: 60%;
+    width: 10%;
+    top: 10%;
+    left: -105%;
 }
 .cardHolder_full {
-    transition: 500ms all;
+    transition: 300ms all;
     position: absolute;
-    box-shadow: 0 0 10px red;
-    height: 500px;
-    width: 500px;
+    box-shadow: 0 0 2px #000;
+    height: 60%;
+    width: 98%;
     top: 10%;
-    left: 10px;
+    left: 1%;
 }
+
+
+.meterHolder {
+    transition: 300ms all;
+    position: absolute;
+    box-shadow: 0 0 2px #000;
+    height: 8%;
+    width: 98%;
+    top: -10%;
+    left: 1%;
+}
+.meterHolder_full {
+    transition: 300ms all;
+    position: absolute;
+    box-shadow: 0 0 2px #000;
+    height: 8%;
+    width: 98%;
+    top:1%;
+    left: 1%;
+}
+.food, .people, .military, .money {
+    background: #144400;
+    height:66%;
+    width: 23%;
+    margin: 1%;
+    position: relative;
+    box-shadow: 0 0 1px #000;
+    float:left;
+    text-align:center;
+}
+
+.outputHolder {
+    transition: 300ms all;
+    position: absolute;
+    box-shadow: 0 0 2px #000;
+    height: 28%;
+    width: 98%;
+    bottom: -30%;
+    left: 1%;
+}
+
+.outputHolder_full {
+    transition: 300ms all;
+    position: absolute;
+    box-shadow: 0 0 2px #000;
+    height: 28%;
+    width: 98%;
+    bottom: 1%;
+    left: 1%;
+}
+/* ID */
 #dvContainer {
     position:absolute;
     height:100%;
+    width:100%;
 }
