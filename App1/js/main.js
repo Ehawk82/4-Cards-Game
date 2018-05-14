@@ -6,7 +6,11 @@
 
 	var app = WinJS.Application;
 	var activation = Windows.ApplicationModel.Activation;
-	var isFirstActivation = true;
+    var isFirstActivation = true;
+
+    var ViewManagement = Windows.UI.ViewManagement;
+    var ApplicationViewWindowingMode = ViewManagement.ApplicationViewWindowingMode;
+    var ApplicationView = ViewManagement.ApplicationView;
 
 	app.onactivated = function (args) {
 		if (args.detail.kind === activation.ActivationKind.voiceCommand) {
@@ -16,6 +20,7 @@
 		else if (args.detail.kind === activation.ActivationKind.launch) {
 			// A Launch activation happens when the user launches your app via the tile
 			// or invokes a toast notification by clicking or tapping on the body.
+            
 			if (args.detail.arguments) {
 				// TODO: If the app supports toasts, use this value from the toast payload to determine where in the app
 				// to take the user in response to them invoking a toast notification.
@@ -33,12 +38,15 @@
 			// Any long-running operations (like expensive network or disk I/O) or changes to user state which occur at launch
 			// should be done here (to avoid doing them in the prelaunch case).
 			// Alternatively, this work can be done in a resume or visibilitychanged handler.
+            myUI.preLoader();
 		}
 
 		if (isFirstActivation) {
 			// TODO: The app was activated and had not been running. Do general startup initialization here.
 			document.addEventListener("visibilitychange", onVisibilityChanged);
-			args.setPromise(WinJS.UI.processAll());
+            args.setPromise(WinJS.UI.processAll());
+            ApplicationView.preferredLaunchWindowingMode = ApplicationViewWindowingMode.fullScreen;
+            myUI.init();
 		}
 
 		isFirstActivation = false;
@@ -55,6 +63,49 @@
 		// You might use the WinJS.Application.sessionState object, which is automatically saved and restored across suspension.
 		// If you need to complete an asynchronous operation before your application is suspended, call args.setPromise().
 	};
+    var myUI;
+
+    myUI = {
+        createEle: (x) => { return document.createElement(x) },
+        bySel: (x) => { return document.querySelector(x) },
+        bySelAll: (x) => { return document.querySelectorAll(x) },
+        byTag: (x) => { return document.getElementsByTagName(x) },
+        preLoader: () => {
+            console.log("preloading");
+        },
+        init: () => {
+
+            myUI.myLoad();
+        },
+        myLoad: () => {
+            var startBtn = myUI.createEle("button");
+
+            startBtn.innerHTML = "START";
+            startBtn.onclick = myUI.startGame(startBtn);
+
+            dvContainer.appendChild(startBtn);
+        },
+        startGame: (startBtn) => {
+            return () => {
+                setTimeout(() => {
+                    startBtn.remove();
+                    myUI.gameInterfaceLoad();
+                }, 50);
+            }
+        },
+        gameInterfaceLoad: () => {
+            var cardHolder = myUI.createEle("div");
+
+            cardHolder.innerHTML = "&nbsp;";
+            cardHolder.className = "cardHolder";
+
+            setTimeout(() => {
+                cardHolder.className = "cardHolder_full";
+                dvContainer.appendChild(cardHolder);
+            }, 500);
+            
+        }
+    };
 
 	app.start();
 
