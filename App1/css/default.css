@@ -1,86 +1,125 @@
 ﻿/* DOM */
 html {
-
 }
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background: #0A7FCB;
+}
+
+h3 {
+    color: #fff;
 }
 /* class */
 .startBtn {
     transition: 300ms all;
     position: absolute;
     box-shadow: 0 0 1px #000;
-    background-color:lightgrey;
+    background-color: #0f9af5;
+    border: none;
     height: 10%;
     width: 10%;
     top: 10%;
     left: -15%;
 }
+
 .startBtn_full {
     transition: 300ms all;
     position: absolute;
-    box-shadow: 0 0 1px #000;
+    box-shadow: 0 0 2px #000;
     background-color: lightgrey;
+    border: none;
     height: 10%;
     width: 10%;
     top: 10%;
     left: 5%;
 }
+
 .cardHolder {
     transition: 300ms all;
     position: absolute;
     box-shadow: 0 0 2px #000;
+    background: #fff;
     height: 60%;
     width: 10%;
     top: 10%;
     left: -105%;
 }
+
 .cardHolder_full {
     transition: 300ms all;
     position: absolute;
-    box-shadow: 0 0 2px #000;
+    background: #fff;
     height: 60%;
     width: 98%;
     top: 10%;
     left: 1%;
+    text-align:center;
 }
-
-
+.deck_unflipped, .deck_flipped {
+    display: inline-block;
+    height: 350px;
+    width: 270px;
+    background: #0A7FCB;
+    margin: 10% 20px;
+}
+.cards {
+    transition: 300s all;
+    position: absolute;
+    box-shadow: 0 0 10px black inset;
+    height: 350px;
+    width: 270px;
+    margin-left: -1500px;
+}
+.cards_full {
+    transition:300s all;
+    position: absolute;
+    box-shadow: 0 0 10px black inset;
+    height: 350px;
+    width: 270px;
+    margin-left: 1px;
+}
 .meterHolder {
     transition: 300ms all;
     position: absolute;
-    box-shadow: 0 0 2px #000;
+    background: #fff;
     height: 8%;
     width: 98%;
     top: -10%;
     left: 1%;
 }
+
 .meterHolder_full {
     transition: 300ms all;
     position: absolute;
-    box-shadow: 0 0 2px #000;
+    background: #fff;
     height: 8%;
     width: 98%;
-    top:1%;
+    top: 1%;
     left: 1%;
 }
+
 .food, .people, .military, .money {
-    background: #144400;
-    height:66%;
+    background: #0A7FCB;
+    height: 66%;
     width: 23%;
     margin: 1%;
-    position: relative;
-    box-shadow: 0 0 1px #000;
-    float:left;
-    text-align:center;
+    float: left;
+    text-align: center;
+}
+
+.dvBars {
+    margin-top: -20%;
+    height: 100%;
+    background: green;
 }
 
 .outputHolder {
     transition: 300ms all;
     position: absolute;
-    box-shadow: 0 0 2px #000;
+    background: #fff;
     height: 28%;
     width: 98%;
     bottom: -30%;
@@ -90,7 +129,7 @@ html, body {
 .outputHolder_full {
     transition: 300ms all;
     position: absolute;
-    box-shadow: 0 0 2px #000;
+    background: #fff;
     height: 28%;
     width: 98%;
     bottom: 1%;
@@ -98,7 +137,7 @@ html, body {
 }
 /* ID */
 #dvContainer {
-    position:absolute;
-    height:100%;
-    width:100%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
