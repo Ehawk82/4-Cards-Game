@@ -65,6 +65,11 @@
     };
     var myUI, uData, myDeck, myDeckCount;
 
+    
+
+    var cards = [],
+        cardCursor = 0;
+
     myDeck = [];
     myDeckCount = 52;
 
@@ -82,7 +87,7 @@
         bySel: (x) => { return document.querySelector(x) },
         bySelAll: (x) => { return document.querySelectorAll(x) },
         byTag: (x) => { return document.getElementsByTagName(x) },
-
+        genCardId: () => { return 'card_' + ((++cardCursor).toString()); },
         /* initializing and gloabal UI control */
         preLoader: () => {
             //console.log("preloading");
@@ -94,7 +99,7 @@
                 //console.log("uData is not here, but we'll do that now");
                 localStorage.setItem("uData", JSON.stringify(uData));
             } else {
-                //console.log("uData is here, and we'll preload and adjustments now...");
+                //console.log("user data is here, and we'll preload and adjustments now...");
                 //console.log(uData);
             }
 
@@ -192,27 +197,264 @@
             }, 600);
         },
         callDeck: (deck_unflipped, deck_flipped, uuu) => {
+            var cardType = [
+                "Fire", "Water", "Earth", "Air", "Aether", "Nature"
+            ];
+
+            var fireQuestions = [
+                "A fire has broken out in one of your small cities!",
+                "A volcanic eruption threatens a settlement!",
+                "A large band of outcasts threaten to burn down your granary!",
+                "A wildfire threatens your industry!",
+                "A Firewalker has been born!"
+            ];
+
+            var waterQuestions = [
+                "A flash flood has begun!",
+                "A hurricane threatens a coastal city!",
+                "There are troops stranded in the desert!",
+                "This drought has gone on too long!",
+                "An Water Wizard has been born!"
+            ];
+
+            var earthQuestions = [
+                "Small earthquake reported off the west coast!",
+                "A rockslide has blocked a road and cut off supplies to a nearby town!",
+                "A growing desert!",
+                "A large earthquake has been reported on the west coast!",
+                "A Stone Golem has been born!"
+            ];
+
+            var airQuestions = [
+                "A cyclone threatens landfall!",
+                "Tornado season is upon us!",
+                "High winds knock down road signs!",
+                "Pollution degrades air quality!",
+                "A wind glider has been born!"
+            ];
+
+            var aetherQuestions = [
+                "Meteorites disrupt social gatherings!",
+                "Shadow people appear in city courthouse!",
+                "Lightning storms threaten central valley!",
+                "Mysterious alien craft appear in night sky!",
+                "A Moonwalker has been born!"
+            ];
+
+            var natureQuestions = [
+                "An army of ants threatens to destroy farmland!",
+                "Bears are rumaging through trash locations!",
+                "A newly domesticated pet!",
+                "Where are the fish?",
+                "A Gaia Spirit has been born!"
+            ];
+            //f, w, e, a, ea, n
+            var flen = fireQuestions.length,
+                f = Math.round(Math.random() * (flen - 1));
+
+            var wlen = waterQuestions.length,
+                w = Math.round(Math.random() * (wlen - 1));
+
+            var elen = earthQuestions.length,
+                e = Math.round(Math.random() * (elen - 1));
+
+            var alen = airQuestions.length,
+                a = Math.round(Math.random() * (alen - 1));
+
+            var aelen = aetherQuestions.length,
+                ae = Math.round(Math.random() * (aelen - 1));
+
+            var nlen = natureQuestions.length,
+                n = Math.round(Math.random() * (nlen - 1));
+
+            var cardQ = {
+                Fire: fireQuestions[f],
+                Water: waterQuestions[w],
+                Earth: earthQuestions[e],
+                Air: airQuestions[a],
+                Aether: aetherQuestions[ae],
+                Nature: natureQuestions[n]
+
+            };
+
+            var Qlen = cardType.length,
+                rand = Math.round(Math.random() * (Qlen - 1));
+
+            var titleRand = cardType[rand],
+                randQuestion = cardQ[cardType[rand]];
+
             
-            if (uuu.cardCount === 0) {
-                for (var i = 1; i < myDeckCount; i++) {
-                    var card = myUI.createEle("div");
-
-                    card.id = "card_" + i;
-                    card.innerHTML = i;
-                    card.className = "cards";
-
-                    deck_unflipped.appendChild(card);
-
-                    
-                }
 
 
-                
+            
+
+            var newIdx = cards.length,
+                cardId = myUI.genCardId(),
+
+                cardBox = myUI.createEle('div'),
+                card = myUI.createEle('div'),
+
+                front = myUI.createEle('div'),
+                fronttx = myUI.createEle('p'),     // card front text
+                frontbt = myUI.createEle('input'), // card front button 
+
+                back = myUI.createEle('div'),
+                backtx = myUI.createEle('p'),
+                backbt = myUI.createEle('input'), backbt2 = myUI.createEle('input'), backbt3 = myUI.createEle('input'),
+
+                flipper = () => card.classList.toggle('flipped'),
+                accepter = () => { return card.classList.toggle('recycled'), setTimeout(() => { card.remove(); if (cardBox.parentNode.className === "deck_unflipped") { return cardBox.parentNode.innerHTML = "", myUI.callDeck() } else { return cardBox.parentNode.innerHTML = "" } }, 1000) },
+                saver = () => { return card.classList.toggle('accepted'), myUI.saveCard(card, deck_unflipped, deck_flipped, cardBox), setTimeout(() => { deck_unflipped.innerHTML = ""; myUI.callDeck(); }, 1000); },
+                playCard = () => { return card.classList.toggle('selected'), setTimeout(() => { return body.appendChild(cardBox), setTimeout(() => { return card.classList.toggle('selected_full'), myUI.useCard(card, f, w, e, a, ae, n) }, 200) }, 200) };
+
+            cards.push(cardId);
+
+            cardBox.className = 'cardbox';
+            front.className = 'cardfront';
+            back.className = 'cardback';
+            card.className = 'cardPre'
+
+            fronttx.innerHTML = titleRand;
+            backtx.innerHTML = randQuestion;
+            backtx.style.color = "transparent" 
+
+            frontbt.value = '🔄';
+            frontbt.type = 'button';
+            frontbt.onclick = flipper;
+
+            backbt.value = '♻';
+            backbt.type = 'button';
+            backbt.onclick = accepter;
+
+            backbt2.value = '💾';
+            backbt2.type = 'button';
+            backbt2.onclick = saver;
+
+            backbt3.value = '✔';
+            backbt3.type = 'button';
+            backbt3.onclick = playCard;
+
+            card.id = cardId;
+
+            front.appendChild(fronttx);
+            front.appendChild(frontbt);
+
+            back.appendChild(backtx);
+            back.appendChild(backbt);
+            back.appendChild(backbt2);
+            back.appendChild(backbt3);
+
+            card.appendChild(front);
+            card.appendChild(back);
+            cardBox.appendChild(card);
+
+            if (!deck_unflipped) {
+                var deck_unflipped = myUI.bySel(".deck_unflipped");
+
+                deck_unflipped.appendChild(cardBox);
             } else {
-
+                deck_unflipped.appendChild(cardBox);
             }
+            setTimeout(() => {
+                card.className = "card";
+            }, 500);
+        },
+        saveCard: (card, deck_unflipped, deck_flipped, cardBox) => {
+            var cardEles = card.childNodes,
+                cardTitle = cardEles[0].childNodes,
+                cardTitleBack = cardEles[1].childNodes,
+                cardSaveButton = cardEles[1].childNodes,
+                cardbox = cardBox;
+            cardSaveButton[2].remove();
+
+            var newTitle = cardTitleBack[0].innerHTML;
+            cardTitleBack[0].innerHTML = newTitle;
+
+            setTimeout(() => {
+                if (deck_flipped) {
+                    deck_flipped.appendChild(cardbox);
+                } else {
+                    var deck_flipped = myUI.bySel(".deck_flipped");
+                    deck_flipped.innerHTML = "";
+                    deck_flipped.appendChild(cardbox);
+                }
+            }, 100);
+            //deck_flipped.innerHTML = "";
+            //deck_flipped.appendChild(cardbox);
+
+        },
+        useCard: (card, f, w, e, a, ae, n) => {
+            var cardkids = card.childNodes,
+                cardfront = cardkids[0].childNodes,
+                cardback = cardkids[1].childNodes;
+
+            var newCardQuestion = myUI.createEle("h1"),
+                answerHolder = myUI.createEle("div"),
+                answerA = myUI.createEle("button"),
+                answerB = myUI.createEle("button");
+
+            console.log(cardfront[0].innerHTML);
+            if (cardfront[0].innerHTML === "Fire") {
+                var x = f;
+            }
+            if (cardfront[0].innerHTML === "Water") {
+                var x = w;
+            }
+            if (cardfront[0].innerHTML === "Earth") {
+                var x = e;
+            }
+            if (cardfront[0].innerHTML === "Air") {
+                var x = a;
+            }
+            if (cardfront[0].innerHTML === "Aether") {
+                var x = ae;
+            }
+            if (cardfront[0].innerHTML === "Nature") {
+                var x = n;
+            }
+
+            if (cardback[3]) {
+                cardback[3].remove();
+            }
+            if (cardback[2]) {
+                cardback[2].remove();
+            }
+            if (cardback[1]) {
+                cardback[1].remove();
+            }
+
+            var titleContents = cardback[0].innerHTML;
+
+            cardback[0].remove();
+
+            var newTitleTag = myUI.createEle("h2");
+
+            newTitleTag.innerHTML = titleContents;
+            newTitleTag.className = "newTitleTag";
             
-            
+            ///if (card) { }
+
+            //newCardQuestion.innerHTML = cardfront[0].innerHTML + x;
+            //newCardQuestion.className = "newCardQuestion";
+
+            answerA.innerHTML = "A";
+
+            answerB.innerHTML = "B";
+
+            answerHolder.className = "answers";
+            answerHolder.appendChild(answerA);
+            answerHolder.appendChild(answerB);
+
+            cardkids[1].appendChild(newTitleTag);
+            //cardkids[1].appendChild(newCardQuestion);
+            cardkids[1].appendChild(answerHolder);
+
+            setTimeout(() => {
+                newTitleTag.className = "newTitleTag_full";
+               // newCardQuestion.className = "newCardQuestion_full";
+                answerHolder.className = "answers_full";
+
+            }, 300);
         }
     };
 
