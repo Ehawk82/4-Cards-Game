@@ -165,7 +165,11 @@ button {
 .card.accepted {
     transition: 1s all;
 }
+.card.glow {
+    transition: 500ms all;
 
+    box-shadow:0 0 100px yellow;
+}
 .card.selected {
     transition: 500ms all;
     position: absolute;

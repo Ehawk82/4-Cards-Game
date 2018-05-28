@@ -63,9 +63,25 @@
         // You might use the WinJS.Application.sessionState object, which is automatically saved and restored across suspension.
         // If you need to complete an asynchronous operation before your application is suspended, call args.setPromise().
     };
-    var myUI, uData, myDeck, myDeckCount;
+    var myUI, uData, myDeck, myDeckCount, myanswerA, myanswerB;
 
-    
+    myanswerA = {
+        Fire0: "Let it run it's course(👫, 💲)", Fire1: "I hope everyone avoids the danger(👫, 💲)", Fire2: "Bribe them(💲, ⚔)", Fire3: "Keep working, everything will be okay(👫, 💲)", Fire4: "Grant freedom(👫, 💲)",
+        Water0: "Let it run it's course(👫, 💲)", Water1: "I hope everyone avoids the danger(👫, 💲)", Water2: "Bribe them(💲, ⚔)", Water3: "Keep working, everything will be okay(👫, 💲)", Water4: "Grant freedom(👫, 💲)",
+        Earth0: "Let it run it's course(👫, 💲)", Earth1: "I hope everyone avoids the danger(👫, 💲)", Earth2: "Bribe them(💲, ⚔)", Earth3: "Keep working, everything will be okay(👫, 💲)", Earth4: "Grant freedom(👫, 💲)",
+        Air0: "Let it run it's course(👫, 💲)", Air1: "I hope every everyone the danger(👫, 💲)", Air2: "Bribe them(💲, ⚔)", Air3: "Keep working, everything will be okay(👫, 💲)", Air4: "Grant freedom(👫, 💲)",
+        Aether0: "Let it run it's course(👫, 💲)", Aether1: "I hope everyone avoids the danger(👫, 💲)", Aether2: "Bribe them(💲, ⚔)", Aether3: "Keep working, everything will be okay(👫, 💲)", Aether4: "Grant freedom(👫, 💲)",
+        Nature0: "Let it run it's course(👫, 💲)", Nature1: "I hope everyone avoids the danger(👫, 💲)", Nature2: "Bribe them(💲, ⚔)", Nature3: "Keep working, everything will be okay(👫, 💲)", Nature4: "Grant freedom(👫, 💲)"
+    };
+
+    myanswerB = {
+        Fire0: "Send the troops(⚔, 💲, 🥣)", Fire1: "EVACUATE!(⚔, 💲, 🥣)", Fire2: "Use force!(💲, ⚔, 🥣, 👫)", Fire3: "Make repairs(💲, ⚔, 🥣)", Fire4: "Recruit(💲, ⚔, 🥣)",
+        Water0: "Send the troops(⚔, 💲, 🥣)", Water1: "EVACUATE!(⚔, 💲, 🥣)", Water2: "Use force!(💲, ⚔, 🥣, 👫)", Water3: "Make repairs(💲, ⚔, 🥣)", Water4: "Recruit(💲, ⚔, 🥣)",
+        Earth0: "Send the troops(⚔, 💲, 🥣)", Earth1: "EVACUATE!(⚔, 💲, 🥣)", Earth2: "Use force!(💲, ⚔, 🥣, 👫)", Earth3: "Make repairs(💲, ⚔, 🥣)", Earth4: "Recruit(💲, ⚔, 🥣)",
+        Air0: "Send the troops(⚔, 💲, 🥣)", Air1: "EVACUATE!(⚔, 💲, 🥣)", Air2: "Use force!(💲, ⚔, 🥣, 👫)", Air3: "Make repairs(💲, ⚔, 🥣)", Air4: "Recruit(💲, ⚔, 🥣)",
+        Aether0: "Send the troops(⚔, 💲, 🥣)", Aether1: "EVACUATE!(⚔, 💲, 🥣)", Aether2: "Use force!(💲, ⚔, 🥣, 👫)", Aether3: "Make repairs(💲, ⚔, 🥣)", Aether4: "Recruit(💲, ⚔, 🥣)",
+        Nature0: "Send the troops(⚔, 💲, 🥣)", Nature1: "EVACUATE!(⚔, 💲, 🥣)", Nature2: "Use force!(💲, ⚔, 🥣, 👫)", Nature3: "Make repairs(💲, ⚔, 🥣)", Nature4: "Recruit(💲, ⚔, 🥣)"
+    };
 
     var cards = [],
         cardCursor = 0;
@@ -205,14 +221,14 @@
                 "A fire has broken out in one of your small cities!",
                 "A volcanic eruption threatens a settlement!",
                 "A large band of outcasts threaten to burn down your granary!",
-                "A wildfire threatens your industry!",
+                "A wildfire threatens an industrial park!",
                 "A Firewalker has been born!"
             ];
 
             var waterQuestions = [
                 "A flash flood has begun!",
                 "A hurricane threatens a coastal city!",
-                "There are troops stranded in the desert!",
+                "There are enemy troops in the desert!",
                 "This drought has gone on too long!",
                 "An Water Wizard has been born!"
             ];
@@ -220,7 +236,7 @@
             var earthQuestions = [
                 "Small earthquake reported off the west coast!",
                 "A rockslide has blocked a road and cut off supplies to a nearby town!",
-                "A growing desert!",
+                "A legion of men and women in fine armor are on the horizon",
                 "A large earthquake has been reported on the west coast!",
                 "A Stone Golem has been born!"
             ];
@@ -228,7 +244,7 @@
             var airQuestions = [
                 "A cyclone threatens landfall!",
                 "Tornado season is upon us!",
-                "High winds knock down road signs!",
+                "An enemy has developed a flying weapon",
                 "Pollution degrades air quality!",
                 "A wind glider has been born!"
             ];
@@ -236,7 +252,7 @@
             var aetherQuestions = [
                 "Meteorites disrupt social gatherings!",
                 "Shadow people appear in city courthouse!",
-                "Lightning storms threaten central valley!",
+                "A gathering of lightning worshippers claim to have infinite power!",
                 "Mysterious alien craft appear in night sky!",
                 "A Moonwalker has been born!"
             ];
@@ -244,7 +260,7 @@
             var natureQuestions = [
                 "An army of ants threatens to destroy farmland!",
                 "Bears are rumaging through trash locations!",
-                "A newly domesticated pet!",
+                "A private citizen has learned a method to domesticate pets!",
                 "Where are the fish?",
                 "A Gaia Spirit has been born!"
             ];
@@ -274,7 +290,6 @@
                 Air: airQuestions[a],
                 Aether: aetherQuestions[ae],
                 Nature: natureQuestions[n]
-
             };
 
             var Qlen = cardType.length,
@@ -282,11 +297,6 @@
 
             var titleRand = cardType[rand],
                 randQuestion = cardQ[cardType[rand]];
-
-            
-
-
-            
 
             var newIdx = cards.length,
                 cardId = myUI.genCardId(),
@@ -302,10 +312,10 @@
                 backtx = myUI.createEle('p'),
                 backbt = myUI.createEle('input'), backbt2 = myUI.createEle('input'), backbt3 = myUI.createEle('input'),
 
-                flipper = () => card.classList.toggle('flipped'),
-                accepter = () => { return card.classList.toggle('recycled'), setTimeout(() => { card.remove(); if (cardBox.parentNode.className === "deck_unflipped") { return cardBox.parentNode.innerHTML = "", myUI.callDeck() } else { return cardBox.parentNode.innerHTML = "" } }, 1000) },
-                saver = () => { return card.classList.toggle('accepted'), myUI.saveCard(card, deck_unflipped, deck_flipped, cardBox), setTimeout(() => { deck_unflipped.innerHTML = ""; myUI.callDeck(); }, 1000); },
-                playCard = () => { return card.classList.toggle('selected'), setTimeout(() => { return body.appendChild(cardBox), setTimeout(() => { return card.classList.toggle('selected_full'), myUI.useCard(card, f, w, e, a, ae, n) }, 200) }, 200) };
+                flipper = () => { return card.classList.toggle('flipped') },
+                accepter = () => { return card.classList.toggle('recycled'), setTimeout(() => { card.remove(); if (cardBox.parentNode.className === "deck_unflipped") { return cardBox.parentNode.innerHTML = "", myUI.callDeck(deck_unflipped, deck_flipped, uuu) } else { return cardBox.parentNode.innerHTML = "" } }, 10) },
+                saver = () => { return card.classList.toggle('accepted'), myUI.saveCard(card, deck_unflipped, deck_flipped, cardBox), setTimeout(() => { deck_unflipped.innerHTML = ""; myUI.callDeck(deck_unflipped, deck_flipped, uuu); }, 10); },
+                playCard = () => { return card.classList.toggle('selected'), setTimeout(() => { return body.appendChild(cardBox), setTimeout(() => { return card.classList.toggle('selected_full'), myUI.useCard(card, f, w, e, a, ae, n, deck_unflipped, deck_flipped, uuu) }, 200) }, 200) };
 
             cards.push(cardId);
 
@@ -316,7 +326,7 @@
 
             fronttx.innerHTML = titleRand;
             backtx.innerHTML = randQuestion;
-            backtx.style.color = "transparent" 
+            //backtx.style.color = "transparent" 
 
             frontbt.value = '🔄';
             frontbt.type = 'button';
@@ -383,7 +393,7 @@
             //deck_flipped.appendChild(cardbox);
 
         },
-        useCard: (card, f, w, e, a, ae, n) => {
+        useCard: (card, f, w, e, a, ae, n, deck_unflipped, deck_flipped, uuu) => {
             var cardkids = card.childNodes,
                 cardfront = cardkids[0].childNodes,
                 cardback = cardkids[1].childNodes;
@@ -393,7 +403,7 @@
                 answerA = myUI.createEle("button"),
                 answerB = myUI.createEle("button");
 
-            console.log(cardfront[0].innerHTML);
+            
             if (cardfront[0].innerHTML === "Fire") {
                 var x = f;
             }
@@ -431,15 +441,36 @@
 
             newTitleTag.innerHTML = titleContents;
             newTitleTag.className = "newTitleTag";
-            
-            ///if (card) { }
+            //console.log(newTitleTag);
+            //console.log(x);
+            //for testing and whatnot
+            /*
+            if (x === 0) {
+  
+            }
+            if (x === 1) {
 
+            }
+            if (x === 2) {
+
+            }
+            if (x === 3) {
+
+            }
+            if (x === 4) {
+
+            }
+            */
+            var cF = cardfront[0].innerHTML;
+            var xA = cF + x;
             //newCardQuestion.innerHTML = cardfront[0].innerHTML + x;
             //newCardQuestion.className = "newCardQuestion";
+            //console.log(xA);
+            answerA.innerHTML = "A: " + myanswerA[xA];
+            //console.log(xA);
+            answerA.onclick = myUI.answerAClicked(card, xA, deck_unflipped, deck_flipped, uuu);
 
-            answerA.innerHTML = "A";
-
-            answerB.innerHTML = "B";
+            answerB.innerHTML = "B: " + myanswerB[xA];
 
             answerHolder.className = "answers";
             answerHolder.appendChild(answerA);
@@ -455,6 +486,32 @@
                 answerHolder.className = "answers_full";
 
             }, 300);
+        },
+        answerAClicked: (card, xA, deck_unflipped, deck_flipped, uuu) => {
+            return () => {
+                card.classList.remove('selected');
+                card.classList.remove('selected_full');
+                card.classList.toggle('recycled');
+                setTimeout(() => {
+
+                    var cp = card.parentNode;
+                    cp.remove();
+                    //do uuu stuff here
+                    setTimeout(() => {
+                        if (deck_unflipped.innerHTML === "") {
+                            myUI.callDeck(deck_unflipped, deck_flipped, uuu);
+                        } else {
+                            var cb = deck_unflipped.childNodes,
+                                cd = cb[0].childNodes;
+
+                            cd[0].classList.toggle('glow');
+                            setTimeout(() => {
+                                cd[0].classList.remove('glow');
+                            }, 1200);
+                        };
+                    }, 10);
+                }, 1000);
+            }
         }
     };
 
