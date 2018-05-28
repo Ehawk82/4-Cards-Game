@@ -17,7 +17,16 @@ h2 {
 h3 {
     color: #fff;
 }
-
+h6 {
+    padding:0;
+}
+.h6_upper {
+    position:absolute;
+    top:0;
+    margin:0;
+    text-align:center;
+    width:100%;
+}
 input[type='button'] {
     background: transparent;
     border: none;
@@ -167,8 +176,7 @@ button {
 }
 .card.glow {
     transition: 500ms all;
-
-    box-shadow:0 0 100px yellow;
+    box-shadow: 0 0 100px yellow, 0 0 60px yellow, 0 0 30px orange, 0 0 10px red;
 }
 .card.selected {
     transition: 500ms all;
@@ -303,6 +311,11 @@ button {
     width: 98%;
     bottom: 1%;
     left: 1%;
+    overflow-y:scroll;
+}
+.dvHostClear {
+    float:right;
+    margin-right:10%;
 }
 /* ID */
 #dvContainer {

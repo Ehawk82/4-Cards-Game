@@ -66,21 +66,21 @@
     var myUI, uData, myDeck, myDeckCount, myanswerA, myanswerB;
 
     myanswerA = {
-        Fire0: "Let it run it's course(👫, 💲)", Fire1: "I hope everyone avoids the danger(👫, 💲)", Fire2: "Bribe them(💲, ⚔)", Fire3: "Keep working, everything will be okay(👫, 💲)", Fire4: "Grant freedom(👫, 💲)",
-        Water0: "Let it run it's course(👫, 💲)", Water1: "I hope everyone avoids the danger(👫, 💲)", Water2: "Bribe them(💲, ⚔)", Water3: "Keep working, everything will be okay(👫, 💲)", Water4: "Grant freedom(👫, 💲)",
-        Earth0: "Let it run it's course(👫, 💲)", Earth1: "I hope everyone avoids the danger(👫, 💲)", Earth2: "Bribe them(💲, ⚔)", Earth3: "Keep working, everything will be okay(👫, 💲)", Earth4: "Grant freedom(👫, 💲)",
-        Air0: "Let it run it's course(👫, 💲)", Air1: "I hope every everyone the danger(👫, 💲)", Air2: "Bribe them(💲, ⚔)", Air3: "Keep working, everything will be okay(👫, 💲)", Air4: "Grant freedom(👫, 💲)",
-        Aether0: "Let it run it's course(👫, 💲)", Aether1: "I hope everyone avoids the danger(👫, 💲)", Aether2: "Bribe them(💲, ⚔)", Aether3: "Keep working, everything will be okay(👫, 💲)", Aether4: "Grant freedom(👫, 💲)",
-        Nature0: "Let it run it's course(👫, 💲)", Nature1: "I hope everyone avoids the danger(👫, 💲)", Nature2: "Bribe them(💲, ⚔)", Nature3: "Keep working, everything will be okay(👫, 💲)", Nature4: "Grant freedom(👫, 💲)"
+        Fire0: "Let it run it's course(+🥣, -👫, +⚔, -💲)", Fire1: "I hope everyone avoids the danger(+🥣, -👫, +⚔, -💲)", Fire2: "Bribe them(+🥣, -👫, +⚔, -💲)", Fire3: "Keep working, everything will be okay(+🥣, -👫, +⚔, -💲)", Fire4: "Grant freedom(+🥣, -👫, +⚔, -💲)",
+        Water0: "Let it run it's course(+🥣, -👫, +⚔, -💲)", Water1: "I hope everyone avoids the danger(+🥣, -👫, +⚔, -💲)", Water2: "Bribe them(+🥣, -👫, +⚔, -💲)", Water3: "Keep working, everything will be okay(+🥣, -👫, +⚔, -💲)", Water4: "Grant freedom(+🥣, -👫, +⚔, -💲)",
+        Earth0: "Let it run it's course(+🥣, -👫, +⚔, -💲)", Earth1: "I hope everyone avoids the danger(+🥣, -👫, +⚔, -💲)", Earth2: "Bribe them(+🥣, -👫, +⚔, -💲)", Earth3: "Keep working, everything will be okay(+🥣, -👫, +⚔, -💲)", Earth4: "Grant freedom(+🥣, -👫, +⚔, -💲)",
+        Air0: "Let it run it's course(+🥣, -👫, +⚔, -💲)", Air1: "I hope every everyone the danger(+🥣, -👫, +⚔, -💲)", Air2: "Bribe them(+🥣, -👫, +⚔, -💲)", Air3: "Keep working, everything will be okay(+🥣, -👫, +⚔, -💲)", Air4: "Grant freedom(+🥣, -👫, +⚔, -💲)",
+        Aether0: "Let it run it's course(+🥣, -👫, +⚔, -💲)", Aether1: "I hope everyone avoids the danger(+🥣, -👫, +⚔, -💲)", Aether2: "Bribe them(+🥣, -👫, +⚔, -💲)", Aether3: "Keep working, everything will be okay(+🥣, -👫, +⚔, -💲)", Aether4: "Grant freedom(+🥣, -👫, +⚔, -💲)",
+        Nature0: "Let it run it's course(+🥣, -👫, +⚔, -💲)", Nature1: "I hope everyone avoids the danger(+🥣, -👫, +⚔, -💲)", Nature2: "Bribe them(+🥣, -👫, +⚔, -💲)", Nature3: "Keep working, everything will be okay(+🥣, -👫, +⚔, -💲)", Nature4: "Grant freedom(+🥣, -👫, +⚔, -💲)"
     };
 
     myanswerB = {
-        Fire0: "Send the troops(⚔, 💲, 🥣)", Fire1: "EVACUATE!(⚔, 💲, 🥣)", Fire2: "Use force!(💲, ⚔, 🥣, 👫)", Fire3: "Make repairs(💲, ⚔, 🥣)", Fire4: "Recruit(💲, ⚔, 🥣)",
-        Water0: "Send the troops(⚔, 💲, 🥣)", Water1: "EVACUATE!(⚔, 💲, 🥣)", Water2: "Use force!(💲, ⚔, 🥣, 👫)", Water3: "Make repairs(💲, ⚔, 🥣)", Water4: "Recruit(💲, ⚔, 🥣)",
-        Earth0: "Send the troops(⚔, 💲, 🥣)", Earth1: "EVACUATE!(⚔, 💲, 🥣)", Earth2: "Use force!(💲, ⚔, 🥣, 👫)", Earth3: "Make repairs(💲, ⚔, 🥣)", Earth4: "Recruit(💲, ⚔, 🥣)",
-        Air0: "Send the troops(⚔, 💲, 🥣)", Air1: "EVACUATE!(⚔, 💲, 🥣)", Air2: "Use force!(💲, ⚔, 🥣, 👫)", Air3: "Make repairs(💲, ⚔, 🥣)", Air4: "Recruit(💲, ⚔, 🥣)",
-        Aether0: "Send the troops(⚔, 💲, 🥣)", Aether1: "EVACUATE!(⚔, 💲, 🥣)", Aether2: "Use force!(💲, ⚔, 🥣, 👫)", Aether3: "Make repairs(💲, ⚔, 🥣)", Aether4: "Recruit(💲, ⚔, 🥣)",
-        Nature0: "Send the troops(⚔, 💲, 🥣)", Nature1: "EVACUATE!(⚔, 💲, 🥣)", Nature2: "Use force!(💲, ⚔, 🥣, 👫)", Nature3: "Make repairs(💲, ⚔, 🥣)", Nature4: "Recruit(💲, ⚔, 🥣)"
+        Fire0: "Send the troops(-🥣, +👫, -⚔, +💲)", Fire1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Fire2: "Use force!(-🥣, +👫, -⚔, +💲)", Fire3: "Make repairs(-🥣, +👫, -⚔, +💲)", Fire4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Water0: "Send the troops(-🥣, +👫, -⚔, +💲)", Water1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Water2: "Use force!(-🥣, +👫, -⚔, +💲)", Water3: "Make repairs(-🥣, +👫, -⚔, +💲)", Water4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Earth0: "Send the troops(-🥣, +👫, -⚔, +💲)", Earth1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Earth2: "Use force!(-🥣, +👫, -⚔, +💲)", Earth3: "Make repairs(-🥣, +👫, -⚔, +💲)", Earth4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Air0: "Send the troops(-🥣, +👫, -⚔, +💲)", Air1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Air2: "Use force!(-🥣, +👫, -⚔, +💲)", Air3: "Make repairs(-🥣, +👫, -⚔, +💲)", Air4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Aether0: "Send the troops(-🥣, +👫, -⚔, +💲)", Aether1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Aether2: "Use force!(-🥣, +👫, -⚔, +💲)", Aether3: "Make repairs(-🥣, +👫, -⚔, +💲)", Aether4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Nature0: "Send the troops(-🥣, +👫, -⚔, +💲)", Nature1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Nature2: "Use force!(-🥣, +👫, -⚔, +💲)", Nature3: "Make repairs(-🥣, +👫, -⚔, +💲)", Nature4: "Recruit(-🥣, +👫, -⚔, +💲)"
     };
 
     var cards = [],
@@ -94,7 +94,7 @@
         people: 10,
         military: 0,
         money: 100,
-        cardCount: 0
+        cardCount: 1
     }
 
     myUI = {
@@ -103,13 +103,13 @@
         bySel: (x) => { return document.querySelector(x) },
         bySelAll: (x) => { return document.querySelectorAll(x) },
         byTag: (x) => { return document.getElementsByTagName(x) },
-        genCardId: () => { return 'card_' + ((++cardCursor).toString()); },
+        genCardId: (uuu) => { return 'card_' + ((++uuu.cardCount).toString()); },
         /* initializing and gloabal UI control */
         preLoader: () => {
             //console.log("preloading");
         },
         init: () => {
-            //localStorage.clear();
+            localStorage.clear();
             var userdata = localStorage.getItem("uData");
             if (!userdata || userdata === null) {
                 //console.log("uData is not here, but we'll do that now");
@@ -191,7 +191,7 @@
             cardHolder.appendChild(deck_flipped);
 
             /* output holder stuffs */
-            outputHolder.innerHTML = "&nbsp;";
+            outputHolder.innerHTML = "";
             outputHolder.className = "outputHolder";
 
             /* the container stuffs */
@@ -211,6 +211,12 @@
                     myUI.callDeck(deck_unflipped, deck_flipped, uuu);
                 }, 50);
             }, 600);
+        },
+        clearOutput: (outputHolder) => {
+            return () => {
+                console.log("me me me!");
+                outputHolder.innerHTML = "";
+            }
         },
         callDeck: (deck_unflipped, deck_flipped, uuu) => {
             var cardType = [
@@ -299,7 +305,7 @@
                 randQuestion = cardQ[cardType[rand]];
 
             var newIdx = cards.length,
-                cardId = myUI.genCardId(),
+                cardId = myUI.genCardId(uuu),
 
                 cardBox = myUI.createEle('div'),
                 card = myUI.createEle('div'),
@@ -313,8 +319,8 @@
                 backbt = myUI.createEle('input'), backbt2 = myUI.createEle('input'), backbt3 = myUI.createEle('input'),
 
                 flipper = () => { return card.classList.toggle('flipped') },
-                accepter = () => { return card.classList.toggle('recycled'), setTimeout(() => { card.remove(); if (cardBox.parentNode.className === "deck_unflipped") { return cardBox.parentNode.innerHTML = "", myUI.callDeck(deck_unflipped, deck_flipped, uuu) } else { return cardBox.parentNode.innerHTML = "" } }, 10) },
-                saver = () => { return card.classList.toggle('accepted'), myUI.saveCard(card, deck_unflipped, deck_flipped, cardBox), setTimeout(() => { deck_unflipped.innerHTML = ""; myUI.callDeck(deck_unflipped, deck_flipped, uuu); }, 10); },
+                accepter = () => { return card.classList.toggle('recycled'), setTimeout(() => { card.remove(); if (cardBox.parentNode.className === "deck_unflipped") { return cardBox.parentNode.innerHTML = "", myUI.callDeck(deck_unflipped, deck_flipped, uuu) } else { return cardBox.parentNode.innerHTML = "" } }, 100) },
+                saver = () => { return card.classList.toggle('accepted'), myUI.saveCard(card, deck_unflipped, deck_flipped, cardBox), setTimeout(() => { deck_unflipped.innerHTML = ""; myUI.callDeck(deck_unflipped, deck_flipped, uuu); }, 100); },
                 playCard = () => { return card.classList.toggle('selected'), setTimeout(() => { return body.appendChild(cardBox), setTimeout(() => { return card.classList.toggle('selected_full'), myUI.useCard(card, f, w, e, a, ae, n, deck_unflipped, deck_flipped, uuu) }, 200) }, 200) };
 
             cards.push(cardId);
@@ -389,8 +395,7 @@
                     deck_flipped.appendChild(cardbox);
                 }
             }, 100);
-            //deck_flipped.innerHTML = "";
-            //deck_flipped.appendChild(cardbox);
+
 
         },
         useCard: (card, f, w, e, a, ae, n, deck_unflipped, deck_flipped, uuu) => {
@@ -441,48 +446,27 @@
 
             newTitleTag.innerHTML = titleContents;
             newTitleTag.className = "newTitleTag";
-            //console.log(newTitleTag);
-            //console.log(x);
-            //for testing and whatnot
-            /*
-            if (x === 0) {
-  
-            }
-            if (x === 1) {
 
-            }
-            if (x === 2) {
-
-            }
-            if (x === 3) {
-
-            }
-            if (x === 4) {
-
-            }
-            */
             var cF = cardfront[0].innerHTML;
             var xA = cF + x;
-            //newCardQuestion.innerHTML = cardfront[0].innerHTML + x;
-            //newCardQuestion.className = "newCardQuestion";
-            //console.log(xA);
+
             answerA.innerHTML = "A: " + myanswerA[xA];
-            //console.log(xA);
             answerA.onclick = myUI.answerAClicked(card, xA, deck_unflipped, deck_flipped, uuu);
 
             answerB.innerHTML = "B: " + myanswerB[xA];
+            answerB.onclick = myUI.answerBClicked(card, xA, deck_unflipped, deck_flipped, uuu);
 
             answerHolder.className = "answers";
             answerHolder.appendChild(answerA);
             answerHolder.appendChild(answerB);
 
             cardkids[1].appendChild(newTitleTag);
-            //cardkids[1].appendChild(newCardQuestion);
+
             cardkids[1].appendChild(answerHolder);
 
             setTimeout(() => {
                 newTitleTag.className = "newTitleTag_full";
-               // newCardQuestion.className = "newCardQuestion_full";
+
                 answerHolder.className = "answers_full";
 
             }, 300);
@@ -497,6 +481,7 @@
                     var cp = card.parentNode;
                     cp.remove();
                     //do uuu stuff here
+                    myUI.answerAlogic(card, xA, uuu);
                     setTimeout(() => {
                         if (deck_unflipped.innerHTML === "") {
                             myUI.callDeck(deck_unflipped, deck_flipped, uuu);
@@ -507,11 +492,139 @@
                             cd[0].classList.toggle('glow');
                             setTimeout(() => {
                                 cd[0].classList.remove('glow');
-                            }, 1200);
+                            }, 600);
                         };
                     }, 10);
                 }, 1000);
             }
+        },
+        answerBClicked: (card, xA, deck_unflipped, deck_flipped, uuu) => {
+            return () => {
+                card.classList.remove('selected');
+                card.classList.remove('selected_full');
+                card.classList.toggle('recycled');
+                setTimeout(() => {
+
+                    var cp = card.parentNode;
+                    cp.remove();
+                    //do uuu stuff here
+                    myUI.answerBlogic(card, xA, uuu);
+                    setTimeout(() => {
+                        if (deck_unflipped.innerHTML === "") {
+                            myUI.callDeck(deck_unflipped, deck_flipped, uuu);
+                        } else {
+                            var cb = deck_unflipped.childNodes,
+                                cd = cb[0].childNodes;
+
+                            cd[0].classList.toggle('glow');
+                            setTimeout(() => {
+                                cd[0].classList.remove('glow');
+                            }, 600);
+                        };
+                    }, 10);
+                }, 1000);
+            }
+        },
+        answerAlogic: (card, xA, uuu) => {
+            var x = xA;
+
+            var y = parseFloat(x.replace(/[^\d\.\-]/g, "")),
+                w = x.replace(/[0-9]/g, ''),
+                outputHolder = myUI.bySel(".outputHolder_full"),
+                dvFood = myUI.bySel(".food"),
+                dvPeople = myUI.bySel(".people"),
+                dvMilitary = myUI.bySel(".military"),
+                dvMoney = myUI.bySel(".money");
+
+            var cID = card.id,
+                cC = parseFloat(cID.replace(/[^\d\.\-]/g, ""));
+
+            var fd, pp, mt, mn;
+
+            fd = Math.floor(Math.random() * +(y + "00"));
+            pp = Math.floor(Math.random() * +(y + "00"));
+            mt = Math.floor(Math.random() * +(y + "00"));
+            mn = Math.floor(Math.random() * +(y + "00"));
+
+            uuu.food = +uuu.food + +fd;
+            if (uuu.people >= pp) {
+                uuu.people = +uuu.people - +pp;
+            } else {
+                uuu.people = 10;
+
+                pp = 0;
+            }
+            uuu.military = +uuu.military + +mt;
+            if (uuu.money >= mn) {
+                uuu.money = +uuu.money - +mn;
+            } else {
+                uuu.money = 0;
+            }
+            uuu.cardCount = cC;
+
+            localStorage.setItem("uData", JSON.stringify(uuu));
+            var UDATA = localStorage.getItem("uData");
+            if (UDATA) {
+                var UUU = JSON.parse(UDATA);
+            }
+            
+            outputHolder.innerHTML += "<span>Turn " + (UUU.cardCount - 1) + ": Level " + y + " " + w + " card used</span><br />";
+            dvFood.innerHTML = "<h3>🥣" + UUU.food + "</h3>";
+            dvPeople.innerHTML = "<h3>👫" + UUU.people + "</h3>";
+            dvMilitary.innerHTML = "<h3>⚔" + uuu.military + "</h3>";
+            dvMoney.innerHTML = "<h3>💲" + uuu.money + "</h3>";
+            setTimeout(() => {
+                outputHolder.innerHTML += "<span>Annual Report: 🥣(+" + fd + "), 👫(-" + pp + "), ⚔(+" + mt + "), 💲(-" + mn + ")</span><hr />";
+            }, 600);
+        },
+        answerBlogic: (card, xA, uuu) => {
+            var x = xA;
+
+            var y = parseFloat(x.replace(/[^\d\.\-]/g, "")),
+                w = x.replace(/[0-9]/g, ''),
+                outputHolder = myUI.bySel(".outputHolder_full"),
+                dvFood = myUI.bySel(".food"),
+                dvPeople = myUI.bySel(".people"),
+                dvMilitary = myUI.bySel(".military"),
+                dvMoney = myUI.bySel(".money");
+
+            var cID = card.id,
+                cC = parseFloat(cID.replace(/[^\d\.\-]/g, ""));
+
+            var fd, pp, mt, mn;
+
+            fd = Math.floor(Math.random() * +(y + "00"));
+            pp = Math.floor(Math.random() * +(y + "00"));
+            mt = Math.floor(Math.random() * +(y + "00"));
+            mn = Math.floor(Math.random() * +(y + "00"));
+            if (uuu.food >= fd) {
+                uuu.food = +uuu.food - +fd;
+            } else {
+                uuu.food = 0;
+            }
+            uuu.people = +uuu.people + +pp;
+            if (uuu.military >= mt) {
+                uuu.military = +uuu.military - +mt;
+            } else {
+                uuu.military = 0;
+            }
+            uuu.money = +uuu.money + +mn;
+            uuu.cardCount = cC;
+
+            localStorage.setItem("uData", JSON.stringify(uuu));
+            var UDATA = localStorage.getItem("uData");
+            if (UDATA) {
+                var UUU = JSON.parse(UDATA);
+            }
+
+            outputHolder.innerHTML += "<span>Turn " + (UUU.cardCount - 1) + ": Level " + y + " " + w + " card used</span><br />";
+            dvFood.innerHTML = "<h3>🥣" + UUU.food + "</h3>";
+            dvPeople.innerHTML = "<h3>👫" + UUU.people + "</h3>";
+            dvMilitary.innerHTML = "<h3>⚔" + uuu.military + "</h3>";
+            dvMoney.innerHTML = "<h3>💲" + uuu.money + "</h3>";
+            setTimeout(() => {
+                outputHolder.innerHTML += "<span>Annual Report: 🥣(-" + fd + "), 👫(+" + pp + "), ⚔(-" + mt + "), 💲(+" + mn + ")</span><hr />";
+            }, 600);
         }
     };
 
