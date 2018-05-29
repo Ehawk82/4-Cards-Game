@@ -7,6 +7,10 @@ html, body {
     margin: 0;
     padding: 0;
     background: #0A7FCB;
+    background-image: url('../images/bk/grey.png');
+    background-position-y:center;
+    background-repeat:no-repeat;
+    background-size: 100%;
 }
 
 h2 {
@@ -104,9 +108,13 @@ button {
 .cardfront {
 }
 
+.cardfront input[type="button"] {
+    float:right;
+    margin: 10px 5px;
+}
 .cardback input[type="button"] {
     display: table-row;
-    margin: 10px 5px;
+    margin: 1px 5px;
 }
 
 .cardfront, .cardback {
@@ -322,4 +330,52 @@ button {
     position: absolute;
     height: 100%;
     width: 100%;
+}
+#idFire {
+    box-shadow: 0 0 40px red inset;
+    background-color:black;
+    background-image: url('../images/symbols/fire.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+#idWater {
+    box-shadow: 0 0 40px blue inset;
+    background-color: black;
+    background-image: url('../images/symbols/water.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+#idEarth {
+    box-shadow: 0 0 40px brown inset;
+    background-color: black;
+    background-image: url('../images/symbols/earth.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+#idAir {
+    box-shadow: 0 0 40px cyan inset;
+    background-color: black;
+    background-image: url('../images/symbols/air.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+#idAether {
+    box-shadow: 0 0 40px purple inset;
+    background-color: black;
+    background-image: url('../images/symbols/aether.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+#idNature {
+    box-shadow: 0 0 40px green inset;
+    background-color: black;
+    background-image: url('../images/symbols/nature.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
 }

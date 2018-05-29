@@ -327,6 +327,7 @@
 
             cardBox.className = 'cardbox';
             front.className = 'cardfront';
+            front.id = "id" + titleRand;
             back.className = 'cardback';
             card.className = 'cardPre'
 
@@ -373,6 +374,7 @@
             }
             setTimeout(() => {
                 card.className = "card";
+                console.log(card);
             }, 500);
         },
         saveCard: (card, deck_unflipped, deck_flipped, cardBox) => {
@@ -593,10 +595,11 @@
 
             var fd, pp, mt, mn;
 
-            fd = Math.floor(Math.random() * +(y + "00"));
-            pp = Math.floor(Math.random() * +(y + "00"));
-            mt = Math.floor(Math.random() * +(y + "00"));
-            mn = Math.floor(Math.random() * +(y + "00"));
+            fd = Math.floor(Math.random() * +((y + "00") / 2));
+            pp = Math.floor(Math.random() * +((y + "00") / 2));
+            mt = Math.floor(Math.random() * +((y + "00") / 2));
+            mn = Math.floor(Math.random() * +((y + "00") / 2));
+
             if (uuu.food >= fd) {
                 uuu.food = +uuu.food - +fd;
             } else {
@@ -623,7 +626,7 @@
             dvMilitary.innerHTML = "<h3>⚔" + uuu.military + "</h3>";
             dvMoney.innerHTML = "<h3>💲" + uuu.money + "</h3>";
             setTimeout(() => {
-                outputHolder.innerHTML += "<span>Annual Report: 🥣(-" + fd + "), 👫(+" + pp + "), ⚔(-" + mt + "), 💲(+" + mn + ")</span><hr />";
+                outputHolder.innerHTML += "<span>Report: 🥣(-" + fd + "), 👫(+" + pp + "), ⚔(-" + mt + "), 💲(+" + mn + ")</span><hr />";
             }, 600);
         }
     };
