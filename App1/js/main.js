@@ -212,12 +212,7 @@
                 }, 50);
             }, 600);
         },
-        clearOutput: (outputHolder) => {
-            return () => {
-                console.log("me me me!");
-                outputHolder.innerHTML = "";
-            }
-        },
+
         callDeck: (deck_unflipped, deck_flipped, uuu) => {
             var cardType = [
                 "Fire", "Water", "Earth", "Air", "Aether", "Nature"
@@ -325,15 +320,20 @@
 
             cards.push(cardId);
 
+            
+
+
             cardBox.className = 'cardbox';
             front.className = 'cardfront';
             front.id = "id" + titleRand;
             back.className = 'cardback';
+            back.id = "idLevel";
+
             card.className = 'cardPre'
 
             fronttx.innerHTML = titleRand;
             backtx.innerHTML = randQuestion;
-            //backtx.style.color = "transparent" 
+            backtx.style.color = "transparent" 
 
             frontbt.value = '🔄';
             frontbt.type = 'button';
@@ -374,6 +374,7 @@
             }
             setTimeout(() => {
                 card.className = "card";
+                var ckids = 
                 console.log(card);
             }, 500);
         },
@@ -570,13 +571,13 @@
                 var UUU = JSON.parse(UDATA);
             }
             
-            outputHolder.innerHTML += "<span>Turn " + (UUU.cardCount - 1) + ": Level " + y + " " + w + " card used</span><br />";
+            outputHolder.innerHTML += "<span>Level " + y + " " + w + " card used</span><br />";
             dvFood.innerHTML = "<h3>🥣" + UUU.food + "</h3>";
             dvPeople.innerHTML = "<h3>👫" + UUU.people + "</h3>";
             dvMilitary.innerHTML = "<h3>⚔" + uuu.military + "</h3>";
             dvMoney.innerHTML = "<h3>💲" + uuu.money + "</h3>";
             setTimeout(() => {
-                outputHolder.innerHTML += "<span>Annual Report: 🥣(+" + fd + "), 👫(-" + pp + "), ⚔(+" + mt + "), 💲(-" + mn + ")</span><hr />";
+                outputHolder.innerHTML += "<span>Report: 🥣(+" + fd + "), 👫(-" + pp + "), ⚔(+" + mt + "), 💲(-" + mn + ")</span><hr />";
             }, 600);
         },
         answerBlogic: (card, xA, uuu) => {
@@ -620,7 +621,7 @@
                 var UUU = JSON.parse(UDATA);
             }
 
-            outputHolder.innerHTML += "<span>Turn " + (UUU.cardCount - 1) + ": Level " + y + " " + w + " card used</span><br />";
+            outputHolder.innerHTML += "<span>Level " + y + " " + w + " card used</span><br />";
             dvFood.innerHTML = "<h3>🥣" + UUU.food + "</h3>";
             dvPeople.innerHTML = "<h3>👫" + UUU.people + "</h3>";
             dvMilitary.innerHTML = "<h3>⚔" + uuu.military + "</h3>";
