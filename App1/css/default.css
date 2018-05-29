@@ -213,6 +213,12 @@ button {
 
 .newTitleTag_full {
     transition: 500ms all;
+    color:#FFF;
+    width:80%;
+    height:auto;
+    padding:5% 0;
+    text-align:center;
+    background:rgba(0,0,0,0.5);
     position: absolute;
     margin: 20% 10%;
 }
@@ -251,7 +257,7 @@ button {
         box-shadow: 0 0 2px #444;
         margin: 5%;
         border: none;
-        background: rgba(0,0,0,0.3);
+        background: rgba(555,555,555,1);
         height: auto;
         float: left;
         padding: 10px 0;
@@ -259,11 +265,11 @@ button {
     }
 
         .answers_full button:hover {
-            background: rgba(222,222,222,0.8);
+            background: rgba(222,222,222,1);
         }
 
         .answers_full button:active {
-            background: rgba(222,222,222,0.4);
+            background: rgba(255,255,255,1);
         }
 
 .meterHolder {
@@ -337,7 +343,7 @@ button {
     background-image: url('../images/symbols/fire.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 70%;
 }
 #idWater {
     box-shadow: 0 0 40px blue inset;
@@ -345,7 +351,7 @@ button {
     background-image: url('../images/symbols/water.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 70%;
 }
 #idEarth {
     box-shadow: 0 0 40px brown inset;
@@ -353,7 +359,7 @@ button {
     background-image: url('../images/symbols/earth.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 70%;
 }
 #idAir {
     box-shadow: 0 0 40px cyan inset;
@@ -361,7 +367,7 @@ button {
     background-image: url('../images/symbols/air.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 70%;
 }
 #idAether {
     box-shadow: 0 0 40px purple inset;
@@ -369,7 +375,7 @@ button {
     background-image: url('../images/symbols/aether.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 70%;
 }
 #idNature {
     box-shadow: 0 0 40px green inset;
@@ -377,5 +383,45 @@ button {
     background-image: url('../images/symbols/nature.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 70%;
+}
+#idLevel_0 {
+    box-shadow: 0 0 40px green inset;
+    background-color: #fff;
+    background-image: url('../images/symbols/star1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+#idLevel_1 {
+    box-shadow: 0 0 40px green inset;
+    background-color: #fff;
+    background-image: url('../images/symbols/star2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+#idLevel_2 {
+    box-shadow: 0 0 40px green inset;
+    background-color: #fff;
+    background-image: url('../images/symbols/star3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+#idLevel_3 {
+    box-shadow: 0 0 40px green inset;
+    background-color: #fff;
+    background-image: url('../images/symbols/star4.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+#idLevel_4 {
+    box-shadow: 0 0 40px green inset;
+    background-color: #fff;
+    background-image: url('../images/symbols/star5.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
 }

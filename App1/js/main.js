@@ -75,12 +75,12 @@
     };
 
     myanswerB = {
-        Fire0: "Send the troops(-🥣, +👫, -⚔, +💲)", Fire1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Fire2: "Use force!(-🥣, +👫, -⚔, +💲)", Fire3: "Make repairs(-🥣, +👫, -⚔, +💲)", Fire4: "Recruit(-🥣, +👫, -⚔, +💲)",
-        Water0: "Send the troops(-🥣, +👫, -⚔, +💲)", Water1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Water2: "Use force!(-🥣, +👫, -⚔, +💲)", Water3: "Make repairs(-🥣, +👫, -⚔, +💲)", Water4: "Recruit(-🥣, +👫, -⚔, +💲)",
-        Earth0: "Send the troops(-🥣, +👫, -⚔, +💲)", Earth1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Earth2: "Use force!(-🥣, +👫, -⚔, +💲)", Earth3: "Make repairs(-🥣, +👫, -⚔, +💲)", Earth4: "Recruit(-🥣, +👫, -⚔, +💲)",
-        Air0: "Send the troops(-🥣, +👫, -⚔, +💲)", Air1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Air2: "Use force!(-🥣, +👫, -⚔, +💲)", Air3: "Make repairs(-🥣, +👫, -⚔, +💲)", Air4: "Recruit(-🥣, +👫, -⚔, +💲)",
-        Aether0: "Send the troops(-🥣, +👫, -⚔, +💲)", Aether1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Aether2: "Use force!(-🥣, +👫, -⚔, +💲)", Aether3: "Make repairs(-🥣, +👫, -⚔, +💲)", Aether4: "Recruit(-🥣, +👫, -⚔, +💲)",
-        Nature0: "Send the troops(-🥣, +👫, -⚔, +💲)", Nature1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Nature2: "Use force!(-🥣, +👫, -⚔, +💲)", Nature3: "Make repairs(-🥣, +👫, -⚔, +💲)", Nature4: "Recruit(-🥣, +👫, -⚔, +💲)"
+        Fire0: "Send the troops(-🥣, +👫, -⚔, +💲)", Fire1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Fire2: "Use force!(-🥣, +👫, -⚔, +💲)", Fire3: "Make contingency plan(-🥣, +👫, -⚔, +💲)", Fire4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Water0: "Send the troops(-🥣, +👫, -⚔, +💲)", Water1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Water2: "Use force!(-🥣, +👫, -⚔, +💲)", Water3: "Make contingency plan(-🥣, +👫, -⚔, +💲)", Water4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Earth0: "Send the troops(-🥣, +👫, -⚔, +💲)", Earth1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Earth2: "Use force!(-🥣, +👫, -⚔, +💲)", Earth3: "Make contingency plan(-🥣, +👫, -⚔, +💲)", Earth4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Air0: "Send the troops(-🥣, +👫, -⚔, +💲)", Air1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Air2: "Use force!(-🥣, +👫, -⚔, +💲)", Air3: "Make contingency plan(-🥣, +👫, -⚔, +💲)", Air4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Aether0: "Send the troops(-🥣, +👫, -⚔, +💲)", Aether1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Aether2: "Use force!(-🥣, +👫, -⚔, +💲)", Aether3: "Make contingency plan(-🥣, +👫, -⚔, +💲)", Aether4: "Recruit(-🥣, +👫, -⚔, +💲)",
+        Nature0: "Send the troops(-🥣, +👫, -⚔, +💲)", Nature1: "EVACUATE!(-🥣, +👫, -⚔, +💲)", Nature2: "Use force!(-🥣, +👫, -⚔, +💲)", Nature3: "Make contingency plan(-🥣, +👫, -⚔, +💲)", Nature4: "Recruit(-🥣, +👫, -⚔, +💲)"
     };
 
     var cards = [],
@@ -320,20 +320,16 @@
 
             cards.push(cardId);
 
-            
-
-
             cardBox.className = 'cardbox';
             front.className = 'cardfront';
             front.id = "id" + titleRand;
             back.className = 'cardback';
-            back.id = "idLevel";
 
             card.className = 'cardPre'
 
             fronttx.innerHTML = titleRand;
             backtx.innerHTML = randQuestion;
-            backtx.style.color = "transparent" 
+            backtx.style.color = "transparent";
 
             frontbt.value = '🔄';
             frontbt.type = 'button';
@@ -374,9 +370,34 @@
             }
             setTimeout(() => {
                 card.className = "card";
-                var ckids = 
-                console.log(card);
+                myUI.dofancyStuff(card, f, w, e, a, ae, n, deck_unflipped, deck_flipped, uuu);
             }, 500);
+        },
+        dofancyStuff: (card, f, w, e, a, ae, n, deck_unflipped, deck_flipped, uuu) => {
+            var cardkids = card.childNodes,
+                cardfront = cardkids[0].childNodes,
+                cardback = cardkids[1].childNodes;
+
+            if (cardfront[0].innerHTML === "Fire") {
+                var x = f;
+            }
+            if (cardfront[0].innerHTML === "Water") {
+                var x = w;
+            }
+            if (cardfront[0].innerHTML === "Earth") {
+                var x = e;
+            }
+            if (cardfront[0].innerHTML === "Air") {
+                var x = a;
+            }
+            if (cardfront[0].innerHTML === "Aether") {
+                var x = ae;
+            }
+            if (cardfront[0].innerHTML === "Nature") {
+                var x = n;
+            }
+            cardkids[1].id = "idLevel_" + x;
+            console.log(cardkids[1]);
         },
         saveCard: (card, deck_unflipped, deck_flipped, cardBox) => {
             var cardEles = card.childNodes,

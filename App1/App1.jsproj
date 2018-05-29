@@ -64,6 +64,11 @@
     <Content Include="images\symbols\earth.png" />
     <Content Include="images\symbols\fire.png" />
     <Content Include="images\symbols\nature.png" />
+    <Content Include="images\symbols\star5.png" />
+    <Content Include="images\symbols\star4.png" />
+    <Content Include="images\symbols\star3.png" />
+    <Content Include="images\symbols\star2.png" />
+    <Content Include="images\symbols\star1.png" />
     <Content Include="images\symbols\water.png" />
     <Content Include="index.html" />
     <Content Include="images\LockScreenLogo.scale-200.png" />
