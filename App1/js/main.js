@@ -397,7 +397,7 @@
                 var x = n;
             }
             cardkids[1].id = "idLevel_" + x;
-            console.log(cardkids[1]);
+
         },
         saveCard: (card, deck_unflipped, deck_flipped, cardBox) => {
             var cardEles = card.childNodes,
@@ -465,6 +465,10 @@
             var titleContents = cardback[0].innerHTML;
 
             cardback[0].remove();
+
+            cardkids[1].id = cardfront[0].innerHTML + x;
+
+            console.log(cardkids[1].id);
 
             var newTitleTag = myUI.createEle("h2");
 
@@ -565,10 +569,10 @@
 
             var fd, pp, mt, mn;
 
-            fd = Math.floor(Math.random() * +(y + "00"));
-            pp = Math.floor(Math.random() * +(y + "00"));
-            mt = Math.floor(Math.random() * +(y + "00"));
-            mn = Math.floor(Math.random() * +(y + "00"));
+            fd = Math.floor(Math.random() * +(((y + 1) + "1")) + y);
+            pp = Math.floor(Math.random() * +(((y + 1) + "1")) + y);
+            mt = Math.floor(Math.random() * +(((y + 1) + "1")) + y);
+            mn = Math.floor(Math.random() * +(((y + 1) + "1")) + y);
 
             uuu.food = +uuu.food + +fd;
             if (uuu.people >= pp) {
@@ -616,11 +620,10 @@
                 cC = parseFloat(cID.replace(/[^\d\.\-]/g, ""));
 
             var fd, pp, mt, mn;
-
-            fd = Math.floor(Math.random() * +((y + "00") / 2));
-            pp = Math.floor(Math.random() * +((y + "00") / 2));
-            mt = Math.floor(Math.random() * +((y + "00") / 2));
-            mn = Math.floor(Math.random() * +((y + "00") / 2));
+            fd = Math.floor(Math.random() * +(((y + 1) + "1")) / (y + 1));
+            pp = Math.floor(Math.random() * +(((y + 1) + "1")) / (y + 2));
+            mt = Math.floor(Math.random() * +(((y + 1) + "1")) / (y + 1));
+            mn = Math.floor(Math.random() * +(((y + 1) + "1")) / (y + 2));
 
             if (uuu.food >= fd) {
                 uuu.food = +uuu.food - +fd;
